@@ -4,8 +4,10 @@ import {UploadService} from "../service/upload.service.ts";
 import {HttpClient} from "../../../libs/HttpClient.ts";
 
 
+// Константи для типів дій
 export enum UploadSlice {
     upload = 'upload/uploadFile',
+    reset = 'upload/reset'
 }
 
 type UploadState = {

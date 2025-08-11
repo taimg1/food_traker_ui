@@ -10,11 +10,18 @@ export class UploadService {
 
     public async uploadFile(file: File): Promise<FoodAnalysisResponse> {
         try {
+
             const response = await this.httpClient.uploadFile<FoodAnalysisResponse, unknown>(
                 '/analyze-food',
                 file,
                 undefined,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                }
             );
+
             return response;
         } catch (error) {
             console.error('File upload failed:', error);

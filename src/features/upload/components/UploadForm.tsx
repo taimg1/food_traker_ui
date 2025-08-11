@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import FileInput from './FileInput';
 import { useUpload } from '../hooks/useUpload';
@@ -20,7 +20,7 @@ const UploadForm = () => {
     };
   }, [resetState]);
 
-  const onSubmit = useCallback(async (formData: FormValues) => {
+  const onSubmit = async (formData: FormValues) => {
     if (!formData.foodImage) return;
 
     try {
@@ -28,12 +28,12 @@ const UploadForm = () => {
     } catch (error) {
       console.error('Помилка при завантаженні:', error);
     }
-  }, [uploadFile]);
+  };
 
-  const handleReset = useCallback(() => {
+  const handleReset = () => {
     reset();
     resetState();
-  }, [reset, resetState]);
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">

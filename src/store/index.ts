@@ -4,6 +4,6 @@ import { apiSlice } from "../hooks/useReduxHooks";
 
 export const store = configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) =>
-       getDefaultMiddleware().concat(apiSlice.middleware),
+    //middleware: (getDefaultMiddleware) =>
+       // getDefaultMiddleware().concat(apiSlice.middleware),
 });
