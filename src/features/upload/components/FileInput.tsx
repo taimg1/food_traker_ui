@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
-import { useController, type Control } from 'react-hook-form';
+import { useController, type Control, type FieldValues } from 'react-hook-form';
 import { motion } from 'framer-motion';
 
 interface FileInputProps {
   name: string;
-  control: Control<any>;
+  control: Control<FieldValues>;
   accept?: string;
   multiple?: boolean;
-  rules?: Record<string, any>;
+  rules?: Record<string, unknown>;
   label?: string;
   errorMessage?: string;
 }
